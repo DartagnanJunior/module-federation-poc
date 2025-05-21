@@ -12,8 +12,4 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 })
 export class AppComponent {
   title = 'plataform';
-
-  onMenuClick(event: any) {
-    console.log('Menu item clicked:', event);
-  }
 }
