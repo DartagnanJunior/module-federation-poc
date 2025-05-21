@@ -20,9 +20,7 @@
             "outputPath": "dist/plataform",
             "index": "projects/plataform/src/index.html",
             "browser": "projects/plataform/src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "projects/plataform/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -40,7 +38,10 @@
               "projects/plataform/src/theme.less",
               "projects/plataform/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            }
           },
           "configurations": {
             "production": {
@@ -84,10 +85,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "projects/plataform/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -96,9 +94,7 @@
                 "input": "projects/plataform/public"
               }
             ],
-            "styles": [
-              "projects/plataform/src/styles.scss"
-            ],
+            "styles": ["projects/plataform/src/styles.scss"],
             "scripts": []
           }
         }
