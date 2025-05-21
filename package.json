@@ -4,13 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:all": "concurrently \"ng serve plataform\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test",
-    "serve:ssr:host-app": "node dist/host-app/server/server.mjs",
-    "serve:ssr:mfe-app": "node dist/mfe-app/server/server.mjs",
-    "serve:ssr:dashboard": "node dist/dashboard/server/server.mjs",
-    "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +22,7 @@
     "@angular/router": "^19.2.0",
     "@angular/ssr": "^19.2.13",
     "express": "^4.18.2",
+    "ng-zorro-antd": "^19.2.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
