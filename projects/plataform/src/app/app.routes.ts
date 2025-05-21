@@ -13,6 +13,11 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'currency',
+    loadChildren: () =>
+      import('currencyAnalysis/routes').then((m) => m.CURRENCY_ROUTES),
+  },
+  {
     path: '**',
     component: NotFoundComponent,
   },
