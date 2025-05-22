@@ -1,0 +1,38 @@
+name: Deploy Plataform to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "projects/plataform/**"
+      - "package.json"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Plataform
+        run: build:plataform
+        # env:
+        # Se precisar de variáveis de ambiente específicas para a build, adicione aqui
+        # NODE_ENV: production
+
+      - name: Deploy Plataform to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/plataform
+          # cname: plataform.example.com # pra trocar por um dominio personalizado
