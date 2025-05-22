@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { DayliUsdComponent } from './currency/dayli-usd/dayli-usd.component';
 
 export const CURRENCY_ROUTES: Routes = [
      {
         path: '',
-        component: AppComponent,
+        component: DayliUsdComponent,
         pathMatch: 'full'
     },
 ];
