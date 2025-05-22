@@ -1,0 +1,1 @@
+(self.webpackChunkplataform=self.webpackChunkplataform||[]).push([[1167],{1167:(s,e,n)=>{n.r(e),n.d(e,{environment:()=>a});const a={isTestMode:!1}}}]);
