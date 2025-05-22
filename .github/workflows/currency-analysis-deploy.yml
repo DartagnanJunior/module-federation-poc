@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build Currency Analysis
-        run: build:currency-analysis
+        run: npm run build:currency-analysis
 
       - name: Deploy Currency Analysis to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

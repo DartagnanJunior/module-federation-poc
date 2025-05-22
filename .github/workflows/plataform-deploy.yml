@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build Plataform
-        run: build:plataform
+        run: npm run build:plataform
         # env:
         # Se precisar de variáveis de ambiente específicas para a build, adicione aqui
         # NODE_ENV: production
