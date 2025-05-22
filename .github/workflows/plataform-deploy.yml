@@ -7,6 +7,8 @@ on:
     paths:
       - "projects/plataform/**"
       - "package.json"
+      - "package-lock.json"
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -22,17 +24,19 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
+
         run: npm install
 
       - name: Build Plataform
+
         run: npm run build:plataform
         # env:
+        #   NODE_ENV: production
         # Se precisar de variáveis de ambiente específicas para a build, adicione aqui
-        # NODE_ENV: production
 
       - name: Deploy Plataform to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/plataform
-          # cname: plataform.example.com # pra trocar por um dominio personalizado
+          # cname: plataform.example.com # Descomente e substitua pelo seu domínio personalizado
