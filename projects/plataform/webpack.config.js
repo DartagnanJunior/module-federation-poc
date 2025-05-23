@@ -5,10 +5,7 @@ const {
 } = require("@angular-architects/module-federation/webpack");
 
 require("dotenv").config({
-  path: path.resolve(
-    __dirname,
-    "../../env/.env." + (process.env.NODE_ENV || "development")
-  ),
+  path: path.resolve(__dirname, "../../env/.env.development"),
 });
 
 module.exports = withModuleFederationPlugin({
