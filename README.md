@@ -1,59 +1,69 @@
 # PocModuleFederation
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
+A proof-of-concept Angular application using Webpack Module Federation to dynamically load micro-frontends from either the same mono-repo or an external repository.  
+The remote micro-frontend is available at: https://github.com/DartagnanJunior/poc-module-federation-provider
 
-## Development server
+## Live Demo
 
-To start a local development server, run:
+Access the live demo at:  
+https://gray-sky-078464210.6.azurestaticapps.net/
 
-```bash
-ng serve
+## Tech Stack
+
+- Angular 19  
+- Webpack Module Federation  
+- @angular-architects/module-federation  
+
+## Environment Variables
+
+Remote URLs are configured via `.env.*` files and loaded by `webpack.config.js`.  
+Example `env/.env.development`:
+
+```env
+CURRENCY_REMOTE_URL=http://localhost:4201/remoteEntry.js
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Getting Started
 
-## Code scaffolding
+1. Clone the repo and install dependencies:  
+   ```bash
+   git clone <repo-url>
+   cd module-federation-poc
+   npm install
+   ```
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. Run in development mode (starts all apps):  
+   ```bash
+   npm run dev
+   ```
 
-```bash
-ng generate component component-name
-```
+3. Open the host app in your browser:  
+   http://localhost:4200
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Running Apps Separately
 
-```bash
-ng generate --help
-```
+- **Host (Plataform)**  
+  ```bash
+  npm run start:plataform
+  ```
 
-## Building
+- **Remote (Currency Analysis)**  
+  ```bash
+  npm run start:currency-analysis
+  ```
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Building for Production
 
 ```bash
-ng e2e
+npm run build
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Production artifacts will be generated in the `dist/` directory.
 
-## Additional Resources
+## Project Structure
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```
+/projects
+  /plataform          # Host application
+  /currency-analysis  # Remote micro-frontend
+```
