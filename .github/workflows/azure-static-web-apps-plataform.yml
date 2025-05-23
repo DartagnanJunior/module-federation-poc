@@ -35,6 +35,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
           skip_app_build: true
-          app_location: "/"
+          app_location: dist/plataform
           api_location: ""
-          output_location: "dist/plataform"
+          output_location: ""
