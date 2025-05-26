@@ -23,7 +23,7 @@ export const routes: Routes = [
     loadChildren: () =>
       loadRemoteModule({
         type: 'module',
-        remoteEntry: 'http://localhost:4203/remoteEntry.js',
+        remoteEntry: 'https://polite-bay-0c0469710.6.azurestaticapps.net/remoteEntry.js',
         exposedModule: './routes',
       }).then((m) => m.POC_ROUTES),
   },
